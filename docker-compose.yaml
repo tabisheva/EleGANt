@@ -1,0 +1,19 @@
+version: "3.4"
+
+services:
+  elegant:
+    build: .
+
+    command: ["bash"]
+
+    volumes:
+      - "./:/elegant"
+
+    ipc: "host"
+
+    # Compose analogue for `--gpus`.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
