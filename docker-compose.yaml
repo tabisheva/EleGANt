@@ -2,7 +2,9 @@ version: "3.4"
 
 services:
   elegant:
-    build: .
+    build:
+      dockerfile: runtime.dockerfile
+      context: .
 
     command: ["bash"]
 
